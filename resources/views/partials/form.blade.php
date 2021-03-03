@@ -1,5 +1,5 @@
 <section class="container mt-5 p-5">
-    <form class="bg-warning text-white rounded p-5" action="{{$values? '/animal/update/'.$animal->id : '/animal/add'}}" method="post">
+    <form class="bg-warning text-white rounded p-5" action="{{$values? '/animal/update/'.$animal->id : '/animal/add'}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
           <label>Animal's name</label>
@@ -11,7 +11,7 @@
         </div>
         <div class="form-group">
           <label>Picture</label>
-          <input type="text" class="form-control" name="src" value="{{$values? $animal->src : null}}">
+          <input type="file" class="form-control" name="src">
         </div>
         <div class="form-group">
           <label>Age</label>
